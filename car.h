@@ -15,9 +15,29 @@ public:
   double dist;
 
   //methods
-  void forward();
-  void backward();
-  void turnLeft();
-  void turnRight();
-  void stop();
+  void forward()
+  {
+    MotorL.run(-moveSpeed);
+    MotorR.run(moveSpeed);
+  }
+  void backward()
+  {
+    MotorL.run(moveSpeed);
+    MotorR.run(-moveSpeed);
+  }
+  void turnLeft()
+  {
+    MotorL.run(-moveSpeed / 10);
+    MotorR.run(moveSpeed);
+  }
+  void turnRight()
+  {
+    MotorL.run(-moveSpeed);
+    MotorR.run(moveSpeed / 10);
+  }
+  void stop()
+  {
+    MotorL.run(0);
+    MotorR.run(0);
+  }
 };

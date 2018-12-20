@@ -1,11 +1,9 @@
 #include <Arduino.h>
-#define MeMCore_H
 #include <Makeblock.h>
 #include <SoftwareSerial.h>
 
 MeDCMotor MotorL(M1);
 MeDCMotor MotorR(M2);
-#define MeMCore_H
 
 class Car
 {
@@ -17,7 +15,7 @@ public:
   //methods
   void forward()
   {
-    MotorL.run(-moveSpeed);
+    MotorL.run(moveSpeed);
     MotorR.run(moveSpeed);
   }
   void backward()
